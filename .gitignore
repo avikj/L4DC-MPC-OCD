@@ -1,0 +1,18 @@
+*.png
+*.pkl
+*.gif
+# Python files
+*.pyc
+*.egg-info
+__pychache__
+
+# IDE folders
+.idea
+.ipynb_checkpoints
+.spyderproject
+.spyproject
+
+.DS_Store
+
+# Sacred
+_sources

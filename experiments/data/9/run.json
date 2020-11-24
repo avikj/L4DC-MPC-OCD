@@ -1,0 +1,123 @@
+{
+  "artifacts": [],
+  "command": "merging_cioc_beta_experiment",
+  "experiment": {
+    "base_dir": "/Users/avikj/projects/interact-drive-chanlaw/experiments",
+    "dependencies": [
+      "numpy==1.18.1",
+      "sacred==0.8.1",
+      "tensorflow==2.1.0"
+    ],
+    "mainfile": "merging_cioc.py",
+    "name": "CIOC-merging-beta",
+    "repositories": [
+      {
+        "commit": "3dd449d6b3f44496d81615e306081b78ca34533d",
+        "dirty": true,
+        "url": "https://github.com/Chanlaw/interact-drive"
+      },
+      {
+        "commit": "3dd449d6b3f44496d81615e306081b78ca34533d",
+        "dirty": true,
+        "url": "https://github.com/Chanlaw/interact-drive"
+      }
+    ],
+    "sources": [
+      [
+        "merging.py",
+        "_sources/merging_6d5becacdc65f2a27acaf308110039f7.py"
+      ],
+      [
+        "merging_cioc.py",
+        "_sources/merging_cioc_d7145b7cc9e9ad26b35d3f1bae5ee489.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py\", line 2326, in get_attr\n    c_api.TF_OperationGetAttrValueProto(self._c_op, name, buf)\n",
+    "tensorflow.python.framework.errors_impl.InvalidArgumentError: Operation 'loop_body/PartitionedCall/pfor/PartitionedCall' has no attr named '_XlaCompile'.\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 331, in _MaybeCompile\n    xla_compile = op.get_attr(\"_XlaCompile\")\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py\", line 2330, in get_attr\n    raise ValueError(str(e))\n",
+    "ValueError: Operation 'loop_body/PartitionedCall/pfor/PartitionedCall' has no attr named '_XlaCompile'.\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 607, in _GradientsHelper\n    grad_fn = ops.get_gradient_function(op)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py\", line 2495, in get_gradient_function\n    return _gradient_registry.lookup(op_type)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/framework/registry.py\", line 97, in lookup\n    \"%s registry has no entry for: %s\" % (self._name, name))\n",
+    "LookupError: gradient registry has no entry for: PartitionedCallUnused\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/sacred-0.8.1-py3.7.egg/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"merging_cioc.py\", line 65, in merging_cioc_beta_experiment\n    theta_cioc = cioc.rationalize(trajectory=trajectory).numpy()\n",
+    "  File \"/Users/avikj/projects/interact-drive-chanlaw/interact_drive/reward_inference/second_order_ioc.py\", line 227, in rationalize\n    self.optimizer.minimize(loss_fn, [self.unnorm_weights, theta_r])\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/keras/optimizer_v2/optimizer_v2.py\", line 316, in minimize\n    loss, var_list=var_list, grad_loss=grad_loss)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/keras/optimizer_v2/optimizer_v2.py\", line 350, in _compute_gradients\n    loss_value = loss()\n",
+    "  File \"/Users/avikj/projects/interact-drive-chanlaw/interact_drive/reward_inference/second_order_ioc.py\", line 223, in loss_fn\n    self.weights, trajectory=trajectory, theta_r=theta_r, mu=mu, lm=lm\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/def_function.py\", line 568, in __call__\n    result = self._call(*args, **kwds)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/def_function.py\", line 606, in _call\n    results = self._stateful_fn(*args, **kwds)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 2363, in __call__\n    return graph_function._filtered_call(args, kwargs)  # pylint: disable=protected-access\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 1611, in _filtered_call\n    self.captured_inputs)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 1697, in _call_flat\n    forward_function, args_with_tangents = forward_backward.forward()\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 1423, in forward\n    self._inference_args, self._input_tangents)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 1185, in forward\n    self._forward_and_backward_functions(inference_args, input_tangents))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 1331, in _forward_and_backward_functions\n    outputs, inference_args, input_tangents)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 890, in _build_functions_for_outputs\n    src_graph=self._func_graph)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 669, in _GradientsHelper\n    lambda: grad_fn(op, *out_grads))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 336, in _MaybeCompile\n    return grad_fn()  # Exit early\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 669, in <lambda>\n    lambda: grad_fn(op, *out_grads))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 707, in _rewrite_forward_and_call_backward\n    forward_function, backwards_function = self.forward_backward(len(doutputs))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 616, in forward_backward\n    forward, backward = self._construct_forward_backward(num_doutputs)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 664, in _construct_forward_backward\n    func_graph=backwards_graph)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/framework/func_graph.py\", line 978, in func_graph_from_py_func\n    func_outputs = python_func(*func_args, **func_kwargs)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/eager/function.py\", line 654, in _backprop_function\n    src_graph=self._func_graph)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/tensorflow_core/python/ops/gradients_util.py\", line 619, in _GradientsHelper\n    grad_fn = func_call.python_grad_func\n",
+    "AttributeError: 'NoneType' object has no attribute 'python_grad_func'\n"
+  ],
+  "heartbeat": "2020-01-30T23:33:49.697270",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz",
+    "hostname": "aviks-mbp-2.dyn.berkeley.edu",
+    "os": [
+      "Darwin",
+      "Darwin-19.0.0-x86_64-i386-64bit"
+    ],
+    "python_version": "3.7.5"
+  },
+  "meta": {
+    "command": "merging_cioc_beta_experiment",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "data",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2020-01-30T23:28:23.947503",
+  "status": "FAILED",
+  "stop_time": "2020-01-30T23:33:49.699178"
+}

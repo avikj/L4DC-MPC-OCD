@@ -1,0 +1,39 @@
+{
+  "__annotations__": {
+    "debug_level": {
+      "py/type": "builtins.int"
+    },
+    "initial_theta": {
+      "py/type": "numpy.ndarray"
+    }
+  },
+  "debug_level": 20,
+  "horizon": 5,
+  "initial_theta": {
+    "dtype": "float32",
+    "py/object": "numpy.ndarray",
+    "values": [
+      0.10000000149011612,
+      0.0,
+      0.0,
+      -100.0,
+      -1.0,
+      -10.0
+    ]
+  },
+  "seed": 154482331,
+  "traj_len": 2,
+  "use_plans": true,
+  "weight_norms": [
+    0.0001,
+    0.00031622776601683794,
+    0.001,
+    0.0031622776601683794,
+    0.01,
+    0.03162277660168379,
+    0.1,
+    0.31622776601683794,
+    1.0,
+    3.1622776601683795
+  ]
+}

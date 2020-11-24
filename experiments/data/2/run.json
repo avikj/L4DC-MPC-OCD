@@ -1,0 +1,107 @@
+{
+  "artifacts": [],
+  "command": "merging_cioc_beta_experiment",
+  "experiment": {
+    "base_dir": "/Users/avikj/projects/interact-drive-chanlaw/experiments",
+    "dependencies": [
+      "numpy==1.18.1",
+      "sacred==0.8.1",
+      "tensorflow==2.1.0"
+    ],
+    "mainfile": "merging_cioc.py",
+    "name": "CIOC-merging-beta",
+    "repositories": [
+      {
+        "commit": "3dd449d6b3f44496d81615e306081b78ca34533d",
+        "dirty": true,
+        "url": "https://github.com/Chanlaw/interact-drive"
+      },
+      {
+        "commit": "3dd449d6b3f44496d81615e306081b78ca34533d",
+        "dirty": true,
+        "url": "https://github.com/Chanlaw/interact-drive"
+      }
+    ],
+    "sources": [
+      [
+        "merging.py",
+        "_sources/merging_17283388045280ec3b1754e0975efdb0.py"
+      ],
+      [
+        "merging_cioc.py",
+        "_sources/merging_cioc_6adcd0816c505532a4040c6f36b68f4d.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/sacred-0.8.1-py3.7.egg/sacred/run.py\", line 333, in _emit_started\n    _id=self._id,\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/sacred-0.8.1-py3.7.egg/sacred/observers/file_storage.py\", line 177, in started_event\n    self.save_json(self.config, \"config.json\")\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/sacred-0.8.1-py3.7.egg/sacred/observers/file_storage.py\", line 194, in save_json\n    json.dump(flatten(obj), f, sort_keys=True, indent=2)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/sacred-0.8.1-py3.7.egg/sacred/serializer.py\", line 29, in flatten\n    return _json.loads(json.encode(obj, keys=True))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 96, in encode\n    return backend.encode(context.flatten(value, reset=reset))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 214, in flatten\n    return self._flatten(obj)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 218, in _flatten\n    return self._pop(self._flatten_obj(obj))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 239, in _flatten_obj\n    return flatten_func(obj)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 503, in _flatten_dict_obj\n    flatten(k, v, data)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 578, in _flatten_key_value_pair\n    data[k] = self._flatten(v)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 218, in _flatten\n    return self._pop(self._flatten_obj(obj))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 239, in _flatten_obj\n    return flatten_func(obj)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 503, in _flatten_dict_obj\n    flatten(k, v, data)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 578, in _flatten_key_value_pair\n    data[k] = self._flatten(v)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 218, in _flatten\n    return self._pop(self._flatten_obj(obj))\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 239, in _flatten_obj\n    return flatten_func(obj)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 301, in _ref_obj_instance\n    return self._flatten_obj_instance(obj)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 459, in _flatten_obj_instance\n    return self._flatten_sequence_obj(obj, data)\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 585, in _flatten_sequence_obj\n    value = [self._flatten(v) for v in obj]\n",
+    "  File \"/Users/avikj/projects/venv-interact-drive-chanlaw/lib/python3.7/site-packages/jsonpickle-1.2-py3.7.egg/jsonpickle/pickler.py\", line 585, in <listcomp>\n    value = [self._flatten(v) for v in obj]\n",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py\", line 254, in inner\n    return func(*args, **kwds)\n",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py\", line 629, in __getitem__\n    params = tuple(_type_check(p, msg) for p in params)\n",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py\", line 629, in <genexpr>\n    params = tuple(_type_check(p, msg) for p in params)\n",
+    "  File \"/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py\", line 142, in _type_check\n    raise TypeError(f\"{msg} Got {arg!r:.100}.\")\n",
+    "TypeError: Parameters to generic types must be types. Got 0.\n"
+  ],
+  "heartbeat": null,
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz",
+    "hostname": "calvisitor-10-105-177-67.calvisitor.1918.berkeley.edu",
+    "os": [
+      "Darwin",
+      "Darwin-19.0.0-x86_64-i386-64bit"
+    ],
+    "python_version": "3.7.5"
+  },
+  "meta": {
+    "command": "merging_cioc_beta_experiment",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": "./data",
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "start_time": "2020-01-23T23:33:03.364530",
+  "status": "FAILED",
+  "stop_time": "2020-01-23T23:33:03.368564"
+}
