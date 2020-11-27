@@ -4,16 +4,16 @@ setup(
     name="interact_drive",
     install_requires=[
         "cma",
-        "robo",
+        # "robo",
         "gym",
-        "flake8",  # linter
+        # "flake8",  # linter
         "numpy",
         "matplotlib",
         "moviepy",
         "pyglet>=1.4",  # visualization
-        "pymongo",  # needed for sacred, which refuses to install this
+        # "pymongo",  # needed for sacred, which refuses to install this
         # "cvxpylayers",  # for IRL
-        "sacred",  # for experiment logging
+        # "sacred",  # for experiment logging
         "seaborn",
         "tensorflow>=2.0",
     ],

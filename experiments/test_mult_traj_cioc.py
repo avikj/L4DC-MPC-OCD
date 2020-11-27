@@ -27,11 +27,11 @@ import seaborn as sns
 import tensorflow as tf
 
 from interact_drive.world import CarWorld
-from interact_drive.reward_inference.first_order_ioc import (
+from interact_drive.reward_design.first_order_ioc import (
     InverseLocallyOptimalControl,
 )
-from interact_drive.reward_inference.second_order_ioc import LocalCIOC
-from interact_drive.reward_inference.tests.linearTargetSpeedPlannerCar import (
+from interact_drive.reward_design.second_order_ioc import LocalCIOC
+from interact_drive.reward_design.tests.linearTargetSpeedPlannerCar import (
     LinearTargetSpeedPlannerCar,
 )
 from interact_drive.car import FixedVelocityCar

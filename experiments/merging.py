@@ -127,7 +127,7 @@ def main():
         world.render()
         frames.append(world.render("rgb_array"))
 
-    from interact_drive.reward_inference import LocalCIOC
+    from interact_drive.reward_design import LocalCIOC
     cioc = LocalCIOC(our_car, initial_weights=np.ones((6,), dtype=np.float32))
     # END DELETE THIS;
 

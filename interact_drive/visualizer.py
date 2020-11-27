@@ -325,10 +325,11 @@ class CarVisualizer(object):
             self._draw_lane(lane)
 
         for car in self.world.cars[::-1]: # main robot car is generally first; draw them backwards to draw it on top
-            if car.debug:
-                self._draw_trajectory(car)
-            else:
-                self._draw_car(car)
+            #if car.debug:
+            #    self._draw_trajectory(car)
+            #else:
+
+            self._draw_car(car)
 
 
         if self.main_car is not None:
@@ -397,7 +398,7 @@ class CarVisualizer(object):
         """Draws a `Car`."""
         state = car.state.numpy()
         color = car.color
-        opacity = car.opacity * 255
+        opacity = 255
 
         sprite = self.car_sprites[color]
         sprite.x, sprite.y = state[0], state[1]

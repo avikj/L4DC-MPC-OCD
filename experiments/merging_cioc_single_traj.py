@@ -6,7 +6,7 @@ from sacred import Experiment
 from merging import ThreeLaneTestCar
 from interact_drive.world import ThreeLaneCarWorld
 from interact_drive.car import FixedVelocityCar
-from interact_drive.reward_inference import InverseLocallyOptimalControl, LocalCIOC
+from interact_drive.reward_design import InverseLocallyOptimalControl, LocalCIOC
 
 
 ex = Experiment("CIOC-merging-beta")
