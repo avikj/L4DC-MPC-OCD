@@ -13,14 +13,7 @@ python>=3.6
 pip install -e .
 ```
 
-### Checking your installation
-To test that your code works properly, run the following from the project root directory:
-```
-python experiments/run_mpc_ord.py finite_horizon cmaes
-```
-(If it gets past iteration 1, your installation was successful!)
-
-### Visualizing Scenarios and Running Cost (Reward) Design 
+### Visualizing Scenarios 
 
 We study three scenarios, which we refer to as `finite_horizon`, `local_opt`, and `replanning`. To visualize the `finite_horizon` scenario sampled at 3 different initial conditions, run the following script from the root directory. 
 
@@ -34,6 +27,7 @@ This will generate a reward heatmap PNG and a GIF displaying 3 trajectories in t
 <img src="https://raw.githubusercontent.com/avikj/L4DC-MPC-OCD/master/finite_horizon_true_weights_heatmap.png" width="45%" />
 </p>
 
+## Running Cost (Reward) Design 
 
 To actually run zeroth order optimization to find weights for a surrogate reward function for one of the environments, the same script can be run with the second argument set to `cmaes` or `random` rather than the `vis` (`cmaes` is strongly recommended). Here, the `n_inits` flag determines how many sampled initial conditions in the environment are used to by the optimizer to evaluate each set of weights; using more samples improves generalization to unseen initial conditions, but requires more computation.
 
