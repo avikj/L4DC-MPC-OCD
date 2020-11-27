@@ -29,8 +29,10 @@ python experiments/run_mpc_ord.py finite_horizon vis --n_inits 3
 ```
 
 This will generate a reward heatmap PNG and a GIF displaying 3 trajectories in the scenario from sampled initial conditions; this is done both for the true hand-designed reward weights for the scenario and for tuned reward weights which are hard coded in `run_mpc_ord.py`. You can play around with these weight values to see how the reward landscape and resulting trajectories are affected.
-
-![Trajectories under true weights in finite horizon scenario](finite_horizon_true_weights.gif) ![Reward under true weights in finite horizon scenario](finite_horizon_true_weights_heatmap.gif)
+<p float="left">
+<img src="https://raw.githubusercontent.com/avikj/L4DC-MPC-OCD/master/finite_horizon_true_weights.gif" width="45%" padding="left:30px;bottom:30px;"/>
+<img src="https://raw.githubusercontent.com/avikj/L4DC-MPC-OCD/master/finite_horizon_true_weights_heatmap.png" width="45%" />
+</p>
 
 
 To actually run zeroth order optimization to find weights for a surrogate reward function for one of the environments, the same script can be run with the second argument set to `cmaes` or `random` rather than the `vis` (`cmaes` is strongly recommended). Here, the `n_inits` flag determines how many sampled initial conditions in the environment are used to by the optimizer to evaluate each set of weights; using more samples improves generalization to unseen initial conditions, but requires more computation.
@@ -39,4 +41,4 @@ To actually run zeroth order optimization to find weights for a surrogate reward
 python experiments/run_mpc_ord.py finite_horizon cmaes --n_inits 5
 ```
 
-The reward printed in `Iteration 0` is the total return of the true weights on the sampled initial conditions, and all other rewards printed correspond to weights proposed by the optimization algorithm.
+The reward printed in `Iteration 0` is the total return of the true weights on the sampled initial conditions, and all other rewards printed correspond to surrogate weights proposed by the optimization algorithm.
