@@ -29,7 +29,7 @@ This will generate a reward heatmap PNG and a GIF displaying 3 trajectories in t
 
 ## Running Cost (Reward) Design 
 
-To actually run zeroth order optimization to find weights for a surrogate reward function for one of the environments, the same script can be run with the second argument set to `cmaes` or `random` rather than the `vis` (`cmaes` is strongly recommended). Here, the `n_inits` flag determines how many sampled initial conditions in the environment are used to by the optimizer to evaluate each set of weights; using more samples improves generalization to unseen initial conditions, but requires more computation.
+To actually run zeroth order optimization to find weights for a surrogate reward function for one of the environments, the same script can be run with the second argument set to `cmaes` or `random` rather than `vis` (`cmaes` is strongly recommended). Here, the `n_inits` flag determines how many sampled initial conditions in the environment are used to by the optimizer to evaluate each set of weights; using more samples improves generalization to unseen initial conditions, but requires more computation.
 
 ```
 python experiments/run_mpc_ord.py finite_horizon cmaes --n_inits 5
