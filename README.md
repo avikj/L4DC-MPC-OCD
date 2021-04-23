@@ -1,4 +1,4 @@
-# Optimal Cost Design for Model Predictive Control (L4DC 2020 submission code)
+# Optimal Cost Design for Model Predictive Control (L4DC 2021 submission code)
 
 _Note: while in the paper we discuss cost functions to be minimized, we use the convention of maximizing reward functions in this codebase; these are identical modulo a negative sign_
 
